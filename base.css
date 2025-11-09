@@ -273,7 +273,7 @@ body { font-family: 'Meiryo', sans-serif; overflow-x: hidden; }
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: auto auto; 
-  gap: 1%;
+  gap: 0.01%;
   width: 84%;
   margin: 0 auto 0.5rem auto;
   margin-bottom: 1rem;
@@ -626,7 +626,7 @@ body { font-family: 'Meiryo', sans-serif; overflow-x: hidden; }
   }
   .experience-bottom {
     flex-direction: column;
-    gap: 1rem;
+    padding-left: 16px;
   }
   .exp-card, .exp-card.large {
     width: 100%;
@@ -986,4 +986,203 @@ body { font-family: 'Meiryo', sans-serif; overflow-x: hidden; }
   .card .resort {
     white-space: nowrap;  /* ← 改行を禁止 */
   }
+}
+
+@media screen and (max-width: 768px) {
+  .grid-item img {
+    display: none; /* ← スマホでは画像を非表示に */
+  }
+
+@media screen and (max-width: 768px) {
+  .grid-item img {
+    display: none; /* 画像を非表示 */
+  }
+
+  .grid-item {
+    background: none;       /* 背景色を解除 */
+    padding: 0.5rem 1rem;   /* 左右に余白を追加 */
+    text-align: left;       /* 全体を左寄せに */
+    display: block;         /* Flex解除で自然な流れに */
+  }
+
+  .grid-label {
+    position: static;       /* 通常の位置に戻す */
+    color: #333;            /* 黒文字に変更 */
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 0.2rem 0;
+    text-align: left;
+    background: none;       /* 背景色を完全に解除 */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .exp-card img {
+    display: none; /* 画像を非表示に */
+  }
+
+  .exp-card,
+  .exp-card.large {
+    background: none;       /* 背景色を解除 */
+    text-align: left;       /* 左寄せにする */
+    display: block;         /* Flex解除で自然な流れに */
+  }
+
+  .exp-card .grid-label,
+  .exp-card.large .grid-label {
+    position: static;       /* 通常の位置に戻す */
+    color: #333;            /* 黒文字に変更 */
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: left;
+    background: none;       /* 背景色を完全に解除 */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .grid-item,
+  .exp-card,
+  .exp-card.large {
+    display: block;
+    background: none;
+  }
+
+  .grid-label {
+    position: static;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333;
+    background: none;
+    text-align: left;
+    line-height: 1.6;
+    margin: 0.5rem 0; /* ← 上下の余白を統一 */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .grid-label {
+    font-family: "BIZ UDGothic";
+    font-size: 1.3rem;
+    font-weight: 500;       /* 太字でしっかり見せる */
+    color: #333;
+    background: none;
+    text-align: left;
+    position: static;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .exp-card .grid-label,
+  .exp-card.large .grid-label {
+    font-family: "BIZ UDGothic", "Noto Sans JP", sans-serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #333;
+    background: none;
+    text-align: left;
+    position: static;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .grid-label,
+  .exp-card .grid-label,
+  .exp-card.large .grid-label {
+    display: block;  /* ← インライン要素をブロック化して余白制御しやすく */
+    font-family: "BIZ UDGothic";
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 0.5;   /* ← 行間を完全にゼロに近づける */
+    margin: 0;        /* ← 上下の余白もゼロに */
+    color: #333;
+    background: none;
+    text-align: left;
+    position: static;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .exp-card .grid-label,
+  .exp-card.large .grid-label {
+    display: block;         /* ← 改行されるようにする */
+    font-family: "BIZ UDGothic", "Noto Sans JP", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1;         /* ← 行間をなくす（上下の文字間を詰める） */
+    margin: 0;
+    color: #333;
+  }
+
+  .exp-card,
+  .exp-card.large {
+    display: block;         /* ← 画像の下に改行されるようにする */
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .exp-card,
+  .exp-card.large {
+    display: block;         /* ← 画像とテキストを縦並びにする */
+    text-align: left;
+  }
+
+  .exp-card .grid-label,
+  .exp-card.large .grid-label {
+    display: block;         /* ← 改行されるようにする */
+    font-family: "BIZ UDGothic", "Noto Sans JP", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1;         /* ← 行間をなくす */
+    margin: 0;
+    color: #333;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .exp-card,
+  .exp-card.large {
+    display: block;
+    text-align: left;
+  }
+
+  .exp-card .grid-label,
+  .exp-card.large .grid-label {
+    display: block;
+    line-height: 1 !important;
+    margin: 0 !important;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: "BIZ UDGothic", "Noto Sans JP", sans-serif;
+    color: #333;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .experience-grid {
+    margin-bottom: 0 !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .news-item {
+    background-color: #e0e0e0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .news-item img {
+    display: block;
+    margin: 0 auto;
+    width: 180px;
+    height: auto;
+  }
+}
+
+.news-desc {
+  font-size: 0.9rem; /* ← 少し小さめにして収める */
+}
+
 }
